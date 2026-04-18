@@ -1,0 +1,17 @@
+# System Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor folders
+.vscode/
+.idea/
+*.swp
+*.log
+
+# Local server folders (if used)
+node_modules/
+dist/
+build/
+.next/
+.gemini/
