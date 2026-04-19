@@ -487,38 +487,6 @@ body {
     z-index: 1;
 }
 
-/* Profession-specific fallback backgrounds (for cards without photo) */
-[data-prof="nalewkarz"] .banner-bg {
-    background: radial-gradient(ellipse at 75% 50%, #2d0a40 0%, #1a0a28 40%, #0e0813 100%);
-}
-[data-prof="ramiarz"] .banner-bg {
-    background: radial-gradient(ellipse at 75% 50%, #2d1e0a 0%, #1e1408 40%, #120e06 100%);
-}
-[data-prof="szklarz"] .banner-bg {
-    background: radial-gradient(ellipse at 75% 50%, #0a1e3a 0%, #081428 40%, #060c16 100%);
-}
-
-/* Wood texture pseudo for cards without real photo */
-[data-prof="nalewkarz"] .banner-bg::after,
-[data-prof="ramiarz"] .banner-bg::after,
-[data-prof="szklarz"] .banner-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: repeating-linear-gradient(
-        175deg,
-        rgba(255,255,255,0.012) 0px,
-        rgba(255,255,255,0.012) 1px,
-        transparent 1px,
-        transparent 28px
-    );
-}
-
-/* Visual accent blobs for no-photo cards */
-[data-prof="nalewkarz"] .banner-bg::before { content: '🍷'; position: absolute; right: 10%; top: 50%; transform: translateY(-50%); font-size: 6rem; opacity: 0.22; filter: blur(3px); }
-[data-prof="ramiarz"] .banner-bg::before { content: '🖼'; position: absolute; right: 10%; top: 50%; transform: translateY(-50%); font-size: 6rem; opacity: 0.2; filter: blur(3px); }
-[data-prof="szklarz"] .banner-bg::before { content: '🔷'; position: absolute; right: 10%; top: 50%; transform: translateY(-50%); font-size: 6rem; opacity: 0.18; filter: blur(3px); }
-
 /* ---------- ICON BADGE ---------- */
 .banner-icon-badge {
     position: absolute;
