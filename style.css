@@ -488,12 +488,6 @@ body {
 }
 
 /* Profession-specific fallback backgrounds (for cards without photo) */
-[data-prof="browarnik"] .banner-bg {
-    background: radial-gradient(ellipse at 75% 50%, #3a2200 0%, #1a1000 40%, #0f0a06 100%);
-}
-[data-prof="kiszeniarz"] .banner-bg {
-    background: radial-gradient(ellipse at 75% 50%, #0a2d18 0%, #0a1e10 40%, #080e0b 100%);
-}
 [data-prof="nalewkarz"] .banner-bg {
     background: radial-gradient(ellipse at 75% 50%, #2d0a40 0%, #1a0a28 40%, #0e0813 100%);
 }
@@ -505,8 +499,6 @@ body {
 }
 
 /* Wood texture pseudo for cards without real photo */
-[data-prof="browarnik"] .banner-bg::after,
-[data-prof="kiszeniarz"] .banner-bg::after,
 [data-prof="nalewkarz"] .banner-bg::after,
 [data-prof="ramiarz"] .banner-bg::after,
 [data-prof="szklarz"] .banner-bg::after {
@@ -523,8 +515,6 @@ body {
 }
 
 /* Visual accent blobs for no-photo cards */
-[data-prof="browarnik"] .banner-bg::before { content: '🍺'; position: absolute; right: 12%; top: 50%; transform: translateY(-50%); font-size: 6rem; opacity: 0.18; filter: blur(4px); }
-[data-prof="kiszeniarz"] .banner-bg::before { content: '🥒'; position: absolute; right: 12%; top: 50%; transform: translateY(-50%); font-size: 6rem; opacity: 0.18; filter: blur(4px); }
 [data-prof="nalewkarz"] .banner-bg::before { content: '🍷'; position: absolute; right: 10%; top: 50%; transform: translateY(-50%); font-size: 6rem; opacity: 0.22; filter: blur(3px); }
 [data-prof="ramiarz"] .banner-bg::before { content: '🖼'; position: absolute; right: 10%; top: 50%; transform: translateY(-50%); font-size: 6rem; opacity: 0.2; filter: blur(3px); }
 [data-prof="szklarz"] .banner-bg::before { content: '🔷'; position: absolute; right: 10%; top: 50%; transform: translateY(-50%); font-size: 6rem; opacity: 0.18; filter: blur(3px); }
