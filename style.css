@@ -760,7 +760,8 @@ body {
     font-size: 1.8rem;
     transition: all var(--tr);
     border-top: 2px solid var(--c, #555);
-    cursor: default;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .mini-card:hover {
