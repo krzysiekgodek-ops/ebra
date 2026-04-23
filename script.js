@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Other sections
     document.querySelectorAll(
-        '.section-intro, .stats-container, .about-left, .about-right, .mini-card'
+        '.section-intro, .stats-container, .about-left, .about-right, .mini-card, .instr-card'
     ).forEach(el => {
         el.classList.add('reveal');
         revealObserver.observe(el);
@@ -159,6 +159,47 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.style.cssText = open
                 ? ''
                 : 'display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(15,14,12,0.98);padding:1.5rem 2rem;gap:1.2rem;border-bottom:1px solid rgba(255,255,255,0.07);';
+        });
+    }
+
+    // ---- PWA Modal logic ----
+    const pwaModal  = document.getElementById('modal-pwa');
+    const openPwa   = document.getElementById('openPwaModal');
+    const closePwa  = document.getElementById('modalClose');
+    const closePwaBtn = document.getElementById('modalCloseBtn');
+
+    if (pwaModal && openPwa) {
+        const toggleModal = (show) => {
+            if (show) {
+                pwaModal.style.display = 'flex';
+                setTimeout(() => pwaModal.classList.add('open'), 10);
+                document.body.style.overflow = 'hidden';
+            } else {
+                pwaModal.classList.remove('open');
+                setTimeout(() => {
+                    pwaModal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }, 400);
+            }
+        };
+
+        openPwa.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleModal(true);
+        });
+
+        [closePwa, closePwaBtn].forEach(btn => {
+            if (btn) btn.addEventListener('click', () => toggleModal(false));
+        });
+
+        pwaModal.addEventListener('click', (e) => {
+            if (e.target === pwaModal) toggleModal(false);
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && pwaModal.classList.contains('open')) {
+                toggleModal(false);
+            }
         });
     }
 

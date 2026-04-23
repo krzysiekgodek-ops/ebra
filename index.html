@@ -32,6 +32,7 @@
             </div>
             <nav class="header-nav">
                 <a href="#kalkulatory">Kalkulatory</a>
+                <a href="#instrukcje">Instrukcje</a>
                 <a href="#o-nas">O projekcie</a>
                 <a href="#kontakt">Kontakt</a>
             </nav>
@@ -513,6 +514,71 @@
         </div>
     </section>
 
+    <!-- =========== INSTRUKCJE =========== -->
+    <section class="instructions" id="instrukcje">
+        <div class="instructions-inner">
+            <div class="section-intro">
+                <p class="eyebrow">Centrum wiedzy</p>
+                <h2>Jak korzystać z <em>Kalkulatorów</em></h2>
+                <p class="intro-desc">Nasze narzędzia zostały zaprojektowane tak, aby proces tworzenia był jak najprostszy. Poznaj kluczowe zasady pracy z aplikacjami.</p>
+            </div>
+
+            <div class="instructions-grid">
+                <!-- MASARSKI MASTER PWA CARD -->
+                <div class="instr-card theme-masarz" id="openPwaModal" style="cursor: pointer;">
+                    <div class="instr-visual">
+                        <div class="instr-icon-wrap" style="background: rgba(192,57,43,0.15); border-color: rgba(192,57,43,0.3); color: #c0392b;">🥩</div>
+                    </div>
+                    <div class="instr-text">
+                        <h3>Masarski Master na telefonie</h3>
+                        <p>Dowiedz się, jak zainstalować kalkulator jako aplikację (PWA) na swoim smartfonie i korzystać z niego offline.</p>
+                        <span class="instr-link">Otwórz instrukcję →</span>
+                    </div>
+                </div>
+
+                <div class="instr-card">
+                    <div class="instr-visual">
+                        <div class="instr-icon-wrap">📏</div>
+                    </div>
+                    <div class="instr-text">
+                        <h3>Zasada Głównego Składnika</h3>
+                        <p>Większość kalkulatorów opiera się na proporcji względem bazy (np. waga mięsa u masarza lub mąki u piekarza). Wpisz wagę główną, a pozostałe wartości przeliczą się same.</p>
+                    </div>
+                </div>
+
+                <div class="instr-card">
+                    <div class="instr-visual">
+                        <div class="instr-icon-wrap">⚖️</div>
+                    </div>
+                    <div class="instr-text">
+                        <h3>Precyzyjne Odmierzanie</h3>
+                        <p>W rzemiośle domowym gramy mają znaczenie. Zalecamy stosowanie wag jubilerskich do przypraw i wag kuchennych o skoku 1g do produktów sypkich i płynnych.</p>
+                    </div>
+                </div>
+
+                <div class="instr-card">
+                    <div class="instr-visual">
+                        <div class="instr-icon-wrap">📱</div>
+                    </div>
+                    <div class="instr-text">
+                        <h3>Dostępność i Offline</h3>
+                        <p>Kalkulatory są w pełni responsywne. Możesz z nich korzystać na tablecie w kuchni lub warsztacie. Wyniki możesz łatwo skopiować do schowka lub wydrukować.</p>
+                    </div>
+                </div>
+
+                <div class="instr-card">
+                    <div class="instr-visual">
+                        <div class="instr-icon-wrap">🔄</div>
+                    </div>
+                    <div class="instr-text">
+                        <h3>Automatyczne Przeliczanie</h3>
+                        <p>Zmiana dowolnego pola wpływa na całą recepturę w czasie rzeczywistym. Pozwala to na szybkie eksperymentowanie z ilością soli, wody czy dodatków bez ręcznych obliczeń.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- =========== O PROJEKCIE =========== -->
     <section class="about" id="o-nas">
         <div class="about-wrap">
@@ -603,6 +669,62 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- =========== MODAL PWA =========== -->
+    <div id="modal-pwa" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-header">
+                <div class="modal-badge-pwa">Aplikacja Mobilna</div>
+                <h2>Masarski Master <em>w Twoim telefonie</em></h2>
+                <p>Korzystaj z kalkulatora jak z normalnej aplikacji: szybciej, wygodniej i bez internetu.</p>
+            </div>
+            <div class="modal-body">
+                <div class="pwa-grid">
+                    <!-- iOS Section -->
+                    <div class="pwa-col ios">
+                        <div class="pwa-platform-header">
+                            <span class="pwa-icon"></span>
+                            <h3>iPhone / iPad</h3>
+                            <p>Przeglądarka Safari</p>
+                        </div>
+                        <ul class="pwa-steps">
+                            <li><span>1</span> Otwórz <strong>masarz.ebra.pl</strong> w Safari</li>
+                            <li><span>2</span> Kliknij przycisk <strong>Udostępnij</strong> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg></li>
+                            <li><span>3</span> Wybierz <strong>„Dodaj do ekranu głównego"</strong></li>
+                            <li><span>4</span> Potwierdź klikając <strong>„Dodaj"</strong></li>
+                        </ul>
+                    </div>
+                    <!-- Android Section -->
+                    <div class="pwa-col android">
+                        <div class="pwa-platform-header">
+                            <span class="pwa-icon">🤖</span>
+                            <h3>Android</h3>
+                            <p>Przeglądarka Chrome</p>
+                        </div>
+                        <ul class="pwa-steps">
+                            <li><span>1</span> Otwórz <strong>masarz.ebra.pl</strong> w Chrome</li>
+                            <li><span>2</span> Kliknij menu <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg> (trzy kropki)</li>
+                            <li><span>3</span> Wybierz <strong>„Zainstaluj aplikację"</strong> lub <strong>„Dodaj do..."</strong></li>
+                            <li><span>4</span> Potwierdź instalację w oknie</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pwa-footer-info">
+                    <h4>Dlaczego warto zainstalować?</h4>
+                    <div class="pwa-benefits">
+                        <div class="pwa-benefit"><span>⚡</span> Błyskawiczny dostęp z pulpitu</div>
+                        <div class="pwa-benefit"><span>📴</span> Praca w trybie offline (brak internetu)</div>
+                        <div class="pwa-benefit"><span>🖥️</span> Większy obszar roboczy (bez paska adresu)</div>
+                        <div class="pwa-benefit"><span>🔔</span> Powiadomienia o nowych recepturach</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.8rem;" id="modalCloseBtn">Rozumiem</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
