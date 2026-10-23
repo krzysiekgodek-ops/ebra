@@ -26,7 +26,7 @@ Tel.: 452 47 57 37
 
 
 
-E-mail: app@ebra.pl 
+E-mail: biuro@antyramy.eu 
 
 
 
