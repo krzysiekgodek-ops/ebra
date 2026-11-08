@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         header.style.transition = 'transform 0.4s ease';
         if (y > 50) {
-            header.style.background = 'rgba(15,14,12,0.98)';
+            header.classList.add('scrolled');
         } else {
-            header.style.background = 'rgba(15,14,12,0.92)';
+            header.classList.remove('scrolled');
         }
         lastY = y;
     }, { passive: true });
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const open = nav.style.display === 'flex';
             nav.style.cssText = open
                 ? ''
-                : 'display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(15,14,12,0.98);padding:1.5rem 2rem;gap:1.2rem;border-bottom:1px solid rgba(255,255,255,0.07);';
+                : 'display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:var(--header-bg-solid);padding:1.5rem 2rem;gap:1.2rem;border-bottom:1px solid var(--border);';
         });
     }
 
@@ -206,3 +206,23 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('%cEBRA Kalkulatory ⚙', 'font-size:22px;font-weight:bold;color:#c9a227;');
     console.log('%c9 kalkulatorów dla rzemieślników pasjonatów', 'color:#a09a8e;');
 });
+
+// ---- Motyw jasny / ciemny ----
+(function () {
+  var btn = document.getElementById('themeToggle');
+  if (!btn) return;
+  var root = document.documentElement;
+  function apply(t) {
+    root.setAttribute('data-theme', t);
+    btn.setAttribute('aria-pressed', t === 'light' ? 'true' : 'false');
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (!m) { m = document.createElement('meta'); m.name = 'theme-color'; document.head.appendChild(m); }
+    m.content = t === 'light' ? '#faf6ec' : '#0f0e0c';
+  }
+  apply(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+  btn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    apply(next);
+    try { localStorage.setItem('ebra-theme', next); } catch (e) {}
+  });
+})();
